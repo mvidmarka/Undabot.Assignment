@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Undabot.Assignment.Common;
 using Undabot.Assignment.Common.BindingModels;
 using Undabot.Assignment.Common.Interfaces;
 
@@ -30,8 +25,8 @@ namespace Undabot.Assignment.Controllers
         [Route("filter")]
         public async Task<FilterResultBindingModel> Filter([FromQuery] FilterBindingModel filter = null)
         {
-           var results = await _productService.GetFilterResultsAsync(filter);
-           return results;
+            var results = await _productService.GetFilterResultsAsync(filter);
+            return results;
         }
 
     }

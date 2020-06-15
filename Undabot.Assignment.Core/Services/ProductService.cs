@@ -62,6 +62,7 @@ namespace Undabot.Assignment.Core.Services
             {
                 string json = await _httpClientHelper.GetJsonFromApi("http://www.mocky.io/v2/5e307edf3200005d00858b49");
                 ProductsResponseBindingModel resopnse = JsonConvert.DeserializeObject<ProductsResponseBindingModel>(json);
+                _logger.LogInformation("Fetch products success", json); 
                 return resopnse.Products;
 
             }
